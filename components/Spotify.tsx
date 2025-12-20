@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-// YOUR CREDENTIALS
-const CLIENT_ID = '3db9c8c1bb744e2aa41106e676fbcf702';
-const CLIENT_SECRET = '18167f95eeb74aad814a5fbb73ca26e3';
+
+const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+const REFRESH_TOKEN = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
 
 // NOTE: You need a refresh token to access your user account's "Now Playing" data.
 // If you don't have one, the widget will show "Not Playing".
-const REFRESH_TOKEN = ''; 
-
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-playing`;
 
