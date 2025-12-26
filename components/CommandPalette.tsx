@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   HomeIcon, 
   BriefcaseIcon, 
-  BookIcon, 
   FolderIcon, 
   FileTextIcon, 
   WrenchIcon, 
@@ -36,14 +35,6 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose, onNavi
       icon: <BriefcaseIcon className="w-5 h-5" />,
       action: () => onNavigate('about'), // Mapped to about for now
       shortcut: 'W'
-    },
-    {
-      id: 'blogs',
-      title: 'Go to Blogs',
-      subtitle: 'Browse all blog posts',
-      icon: <BookIcon className="w-5 h-5" />,
-      action: () => onNavigate('blogs'),
-      shortcut: 'B'
     },
     {
       id: 'projects',

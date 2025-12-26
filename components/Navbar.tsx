@@ -61,13 +61,6 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentPage, onOpenSearch }
               </a>
               <a 
                 href="#" 
-                onClick={(e) => handleNavClick(e, 'blogs')}
-                className={`hover:text-primary transition-colors ${currentPage === 'blogs' ? 'text-primary font-semibold' : ''}`}
-              >
-                Blogs
-              </a>
-              <a 
-                href="#" 
                 onClick={(e) => handleNavClick(e, 'projects')}
                 className={`hover:text-primary transition-colors ${currentPage === 'projects' ? 'text-primary font-semibold' : ''}`}
               >

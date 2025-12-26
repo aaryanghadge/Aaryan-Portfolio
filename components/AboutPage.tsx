@@ -6,24 +6,24 @@ interface AboutPageProps {
 }
 
 const TIMELINE = [
-  {
-    year: '2023 - Present',
-    title: 'Independent Developer',
-    subtitle: 'Building & Shipping',
-    description: 'Focusing on building scalable SaaS products and experimenting with LLMs. Developing open-source tools and contributing to the developer community.'
-  },
-  {
-    year: '2020 - 2024',
-    title: 'Computer Science & Engineering',
-    subtitle: 'University Degree',
-    description: 'Deep dove into Algorithms, Data Structures, and System Design. Specialized in Artificial Intelligence and Machine Learning during the final years.'
-  },
-  {
-    year: '2019',
-    title: 'The Spark',
-    subtitle: 'Self-Taught Beginnings',
-    description: 'Wrote my first line of Python. What started as automating boring tasks turned into a passion for building full-stack applications.'
-  }
+   {
+      year: '2023 – Present',
+      title: 'Independent Builder',
+      subtitle: 'BUILDING & SHIPPING',
+      description: `Building real-world products like Splitily.\nFocused on full-stack development, product design, and shipping usable software.\nLearning by iterating fast on real problems.`
+   },
+   {
+      year: '2020 – 2023',
+      title: 'Self-Directed Learning',
+      subtitle: 'PROJECT-BASED ENGINEERING',
+      description: `Learned programming by building projects instead of following a fixed syllabus.\nStarted with Python and gradually moved into web development, backend systems, and product-focused engineering.`
+   },
+   {
+      year: '2020',
+      title: 'The Spark',
+      subtitle: 'FIRST PROJECT',
+      description: `Started with Python and built my first game — a Flappy Bird clone.\nThat project introduced me to core programming concepts and sparked a long-term passion for building software.`
+   }
 ];
 
 const SKILLS = [
@@ -57,24 +57,30 @@ const AboutPage: React.FC<AboutPageProps> = ({ onGoBack }) => {
         <div className="mb-24 animate-slide-up opacity-0" style={{ animationDelay: '200ms' }}>
            <div className="flex flex-col justify-center max-w-3xl">
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                 I build digital products that feel right.
+                 I enjoy learning by building things.
               </h2>
               <div className="space-y-4 text-base text-secondary leading-relaxed">
                  <p>
-                    My journey isn't just about code; it's about solving problems. From automating simple workflows to architecting complex full-stack systems, I've always been driven by the intersection of creativity and logic.
+                   I started programming in 2020 with Python, where my first real project was a simple Flappy Bird game. Building that game introduced me to programming fundamentals like logic, loops, and debugging, and it made me curious about how software works under the hood.
                  </p>
+
                  <p>
-                    I believe that the best software is invisible—it just works. Whether I'm fine-tuning a micro-interaction or training a custom model, my goal is always the same: to create experiences that are fast, reliable, and genuinely useful.
+                   Since then, I’ve been learning computer science by building projects rather than just reading about concepts. From small experiments to full-stack applications like Splitily, I enjoy turning ideas into working products and improving them step by step.
                  </p>
+
                  <p>
-                    When I'm not in VS Code, you can find me exploring the latest in AI research, reading sci-fi, or searching for the perfect espresso shot.
+                   I’m especially interested in understanding how things work whether it’s writing cleaner code, designing better user experiences, or learning how scalable systems are built. I see programming as a continuous learning process, and I actively look for opportunities to improve by building and experimenting.
+                 </p>
+
+                 <p>
+                   Outside of coding, I like exploring new tech, learning from other builders, and thinking about how software can solve everyday problems.
                  </p>
               </div>
 
               {/* Signature / Footer of Bio */}
               <div className="mt-8 pt-6 border-t border-primary/10 flex items-center gap-4">
                   <div className="h-px bg-blue-500 w-10"></div>
-                  <span className="font-handwriting text-xl text-primary italic opacity-80">Aaryan</span>
+                  <span className="font-handwriting text-xl text-primary italic opacity-80">Aaryan Ghadge</span>
               </div>
            </div>
         </div>

@@ -10,7 +10,8 @@ const ContactPage: React.FC<ContactPageProps> = ({ onGoBack }) => {
     name: '',
     phone: '',
     email: '',
-    message: ''
+        message: '',
+        website: '' // honeypot field (should remain empty)
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -22,14 +23,29 @@ const ContactPage: React.FC<ContactPageProps> = ({ onGoBack }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: '', phone: '', email: '', message: '' });
-      setTimeout(() => setIsSuccess(false), 3000);
-    }, 1500);
+        // Send to serverless endpoint
+        fetch('/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        })
+            .then(async (res) => {
+                setIsSubmitting(false);
+                if (res.ok) {
+                      setIsSuccess(true);
+                      setFormData({ name: '', phone: '', email: '', message: '', website: '' });
+                    setTimeout(() => setIsSuccess(false), 4000);
+                } else {
+                    const data = await res.json().catch(() => ({}));
+                    const err = data?.error || 'Failed to send message';
+                    alert(err);
+                }
+            })
+            .catch((err) => {
+                setIsSubmitting(false);
+                console.error(err);
+                alert('Failed to send message. Please try again later.');
+            });
   };
 
   return (
@@ -135,6 +151,17 @@ const ContactPage: React.FC<ContactPageProps> = ({ onGoBack }) => {
                         className="w-full bg-surface border border-primary/10 rounded-lg px-3 py-2.5 text-sm text-primary placeholder-secondary/50 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500/50 transition-all resize-none"
                     />
                 </div>
+
+                                {/* Honeypot - hidden field to deter spam bots */}
+                                <input
+                                    type="text"
+                                    name="website"
+                                    value={formData.website}
+                                    onChange={handleChange}
+                                    autoComplete="off"
+                                    tabIndex={-1}
+                                    style={{ position: 'absolute', left: '-9999px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}
+                                />
 
                 {/* Submit Button */}
                 <button 

@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import ProjectCard from './components/ProjectCard';
 import Footer from './components/Footer';
 import Snippets from './components/Snippets';
-import Blogs from './components/Blogs';
 import ProjectsPage from './components/ProjectsPage';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
@@ -139,8 +138,6 @@ const App: React.FC = () => {
            <ProjectsPage onGoBack={() => setCurrentPage('home')} />
         ) : currentPage === 'snippets' ? (
            <Snippets onGoBack={() => setCurrentPage('home')} />
-        ) : currentPage === 'blogs' ? (
-           <Blogs onGoBack={() => setCurrentPage('home')} />
         ) : currentPage === 'about' ? (
            <AboutPage onGoBack={() => setCurrentPage('home')} />
         ) : currentPage === 'contact' ? (

@@ -2,31 +2,13 @@ import { Project, Snippet, BlogPost } from './types';
 
 export const PROJECTS: Project[] = [
   {
-    id: '1',
-    title: 'AI Video Editor',
-    description: 'A browser-based video editing tool leveraging WebAssembly and WebGL for real-time effects.',
-    tags: ['Next.js', 'Wasm', 'WebGL', 'TensorFlow'],
-    link: 'https://example.com/video-editor',
-    github: 'https://github.com',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799314346d?q=80&w=1600&auto=format&fit=crop',
-  },
-  {
-    id: '2',
-    title: 'Distributed Task Queue',
-    description: 'High-performance distributed task queue written in Rust with Python bindings.',
-    tags: ['Rust', 'Python', 'gRPC', 'Redis'],
-    link: 'https://example.com/task-queue',
-    github: 'https://github.com',
-    image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?q=80&w=1600&auto=format&fit=crop',
-  },
-  {
-    id: '3',
-    title: 'E-Commerce Analytics',
-    description: 'Real-time analytics dashboard for e-commerce stores using MongoDB time-series.',
-    tags: ['TypeScript', 'MongoDB', 'D3.js', 'Tailwind'],
-    link: 'https://example.com/analytics',
-    github: 'https://github.com',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop',
+    id: 'splitily',
+    title: 'Splitily',
+    description: 'A modern expense-splitting app that helps friends and groups manage shared costs without friction. Built for trips, roommates, and everyday shared spending.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    link: 'https://splitly-omega.vercel.app/',
+    github: '',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop',
   }
 ];
 
